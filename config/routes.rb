@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :books
   resources :usages
   resources :courses
+  root :to => "homes#top"
+  get "/about" => "homes#about"
 end
