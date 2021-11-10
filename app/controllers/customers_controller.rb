@@ -21,6 +21,21 @@ class CustomersController < ApplicationController
     redirect_to customer_path(@cusromer)
   end
 
+  def show
+    @customer = Customer.find(params[:id])
+    @books = @customer.book.all
+  end
+
+  def index
+    @customers = Customer.all
+  end
+
+  def search
+    @customers = Customer.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
+
 private
 
   def customer_params

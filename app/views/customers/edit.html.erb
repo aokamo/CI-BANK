@@ -1,0 +1,5 @@
+<h2>顧客情報編集</h2>
+<%= form_with model:@customer, url: customer_path, local: true do |f| %>
+  <%= render 'form', f: f %>
+  <%= f.submit "更新" %>
+<% end %>

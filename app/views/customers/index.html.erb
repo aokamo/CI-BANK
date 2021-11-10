@@ -1,0 +1,30 @@
+<h2>顧客一覧</h2>
+  <div class="search-form">
+  <%= form_with url: search_path, method: :get, local: true do |f| %>
+    <%= f.text_field :keyword, value: @keyword %>
+    <%= f.submit "検索" %>
+  <% end %>
+  </div>
+  <div class="customer-list">
+    <% @customers.each do |c| %>
+      <%= c.name %>
+      <%= c.phone_num %>
+      <&= c.visit_time %>
+    <% end %>
+  </div>
+  <table class = "customer_index">
+    <tr>
+      <th>顧客ID</th>
+      <th>名前</th>
+      <th>電話番号</th>
+      <th>前回来店</th>
+    </tr>
+    <% @customers.each do |c| %>
+    <tr>
+      <td><%= c.id %></td>
+      <td><%= c.name %></td>
+      <td><%= c.phone_num %></td>
+      <td><%= c.visit_time %></td>
+    </tr>
+    <% end %>
+  </table>

@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   resources :courses
   root :to => "homes#top"
   get "/about" => "homes#about"
+
+  #顧客検索
+  get 'search' => 'customers#search'
 end
