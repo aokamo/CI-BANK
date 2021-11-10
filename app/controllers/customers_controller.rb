@@ -6,7 +6,7 @@ class CustomersController < ApplicationController
   end
 
   def create
-    @customer = Customer.new(customer_params)
+    Customer.create(customer_params)
     @customer.save
     redirect_to request.referer
   end
