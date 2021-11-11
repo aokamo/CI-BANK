@@ -1,3 +1,4 @@
 class Course < ApplicationRecord
-  belongs_to :book
+  has_many :book_courses
+  validates :name, presence: true
 end

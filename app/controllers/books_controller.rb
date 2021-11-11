@@ -7,7 +7,19 @@ class BooksController < ApplicationController
     Book.create(book_params)
   end
 
+  def search
+    @customers = Book.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
+
+  def index
+    @customer = Customer.where(visit_time ="today")
+    @customers = @customer.all
+  end
+
 private
   def book_params
     params.require(:book).permit()
+  end
 end

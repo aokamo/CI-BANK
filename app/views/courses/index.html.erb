@@ -1,0 +1,42 @@
+<h2>コース一覧</h2>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-3 sidebar offset-1">
+<!--新規コース登録ボタン-->
+<!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        コース追加
+      </button>
+    </div>
+    <div class="col-5 sidebar courses offset-2">
+      <%= render 'courses', courses: @courses %>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">新規コース登録</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= form_with model:@course do |f| %>
+        <div class="modal-body">
+          <div class="form-group">
+            <%= f.label :name, "コース名" %>
+            <%= f.text_field :name, autofocus: true %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+          <%= f.submit "登録する", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

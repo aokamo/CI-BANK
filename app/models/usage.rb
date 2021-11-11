@@ -1,3 +1,5 @@
 class Usage < ApplicationRecord
-  belongs_to :book
+  has_many :book_usages
+  has_many :books, through: :book_usages
+  validates :name, presence: true
 end

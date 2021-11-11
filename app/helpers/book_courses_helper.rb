@@ -1,0 +1,2 @@
+module BookCoursesHelper
+end

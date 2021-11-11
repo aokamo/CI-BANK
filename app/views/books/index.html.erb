@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="sidebar">
+
+  </div>
+  <div class="main">
+    <div class="search-form">
+      <%= form_with url: search_path, method: :get, local: true do |f| %>
+        <%= f.text_field :keyword, value: @keyword %>
+        <%= f.submit "検索" %>
+      <% end %>
+    </div>
+    <div class="bar">
+      <ul>
+        <li>
+          <%= link_to new_book_path do %>
+            <p><i class="fas fa-file-alt fa-2x"></i>新規予約</p>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <table class="main-content">
+      <%= render 'books', books: @books %>
+    </table>
+  </div>
+</div>

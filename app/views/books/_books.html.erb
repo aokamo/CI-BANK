@@ -1,0 +1,18 @@
+      <tr>
+        <th>TN</th>
+        <th>TIME</th>
+        <th>name</th>
+        <th>people</th>
+        <th>allergy</th>
+        <th>note</th>
+      </tr>
+      <% books.each do |b| %>
+        <tr>
+          <th><%= b.tablenumber %></th>
+          <th><%= b.visit_time %></th>
+          <th><%= b.name %></th>
+          <th><%= b.people %></th>
+          <th><%= b.allergy %></th>
+          <th><%= b.note %></th>
+        </tr>
+      <% end %>
