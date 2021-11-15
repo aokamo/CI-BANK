@@ -1,11 +1,14 @@
-<%= f.label :phone_num %>
-<%= f.telephone_field :phone_num %>（ハイフンなし）
-<%= f.label :name %>
-<%= f.text_field :name, autofocus: true %>
-<%= f.label :people %>
-<%= f.number_field :people %>
-
-<%= f.label :allergy %>
-<%= f.text_field :allergy %>
-<%= f.label :note %>
-<%= f.text_area :note %>
+<%= f.label :phone_num %><br>
+<%= f.telephone_field :phone_num %>（ハイフンなし）<br>
+<%= f.label :name %><br>
+<%= f.text_field :name, autofocus: true %><br>
+<%= f.label :date, class: 'control-label' %>
+<%= f.date_field :date, class: 'form-control' %>
+<%= f.label :time, class: 'control-label' %>
+<%= f.time_field :time, class: 'form-control' %>
+<%= f.label :people %><br>
+<%= f.number_field :people %><br>
+<%= f.label :allergy %><br>
+<%= f.text_field :allergy %><br>
+<%= f.label :note %><br>
+<%= f.text_area :note %><br>

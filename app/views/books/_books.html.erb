@@ -8,11 +8,15 @@
       </tr>
       <% books.each do |b| %>
         <tr>
-          <th><%= b.tablenumber %></th>
-          <th><%= b.visit_time %></th>
-          <th><%= b.name %></th>
-          <th><%= b.people %></th>
-          <th><%= b.allergy %></th>
-          <th><%= b.note %></th>
+          <td><%= b.table_num %></td>
+          <td>
+            <% if b.visit_time.present? %>
+              <%= b.visit_time.strftime("%Y年 %m月 %d日 %X") %>
+            <% end %>
+          </td>
+          <td><%= b.customer.name %></td>
+          <td><%= b.people %></td>
+          <td><%= b.customer.allergy %></td>
+          <td><%= b.note %></td>
         </tr>
       <% end %>

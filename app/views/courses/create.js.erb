@@ -1,2 +1,3 @@
-$("textfield").val("");
-$('#exampleModal').modal('hide')
+$('#course_name').val("");
+$('#exampleModal').modal('hide');
+$('.courses').html("<%= escape_javascript(render 'courses', courses: @courses) %>")

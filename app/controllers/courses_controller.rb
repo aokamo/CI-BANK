@@ -14,6 +14,7 @@ class CoursesController < ApplicationController
       #   error_messages = course.errors.key.map {|key| [key, course.errors.full_messages_for(key)]}.to_h
       #   render json: {message: error_messages}, status: :unprocessable_entity
       # end
+    @courses = Course.all
   end
 
   private

@@ -5,26 +5,39 @@
     <%= f.submit "検索" %>
   <% end %>
   </div>
-  <div class="customer-list">
-    <% @customers.each do |c| %>
-      <%= c.name %>
-      <%= c.phone_num %>
-      <&= c.visit_time %>
-    <% end %>
+  <div class="bar">
+    <ul>
+      <li>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          顧客登録
+        </button>
+      </li>
+    </ul>
   </div>
   <table class = "customer_index">
-    <tr>
-      <th>顧客ID</th>
-      <th>名前</th>
-      <th>電話番号</th>
-      <th>前回来店</th>
-    </tr>
-    <% @customers.each do |c| %>
-    <tr>
-      <td><%= c.id %></td>
-      <td><%= c.name %></td>
-      <td><%= c.phone_num %></td>
-      <td><%= c.visit_time %></td>
-    </tr>
-    <% end %>
+    <%= render 'customers', customers: @customers %>
   </table>
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">新規顧客登録</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= form_with model: @customer do |f| %>
+        <div class="modal-body">
+          <div class="form-group">
+            <%= render 'form', f: f %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+          <%= f.submit "登録する", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

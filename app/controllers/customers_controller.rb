@@ -6,9 +6,9 @@ class CustomersController < ApplicationController
   end
 
   def create
-    Customer.create(customer_params)
+    @customer = Customer.new(customer_params)
     @customer.save
-    redirect_to request.referer
+    @customers = Customer.all
   end
 
   def edit
@@ -27,7 +27,12 @@ class CustomersController < ApplicationController
   end
 
   def index
-    @customers = Customer.all
+    @course = Course.new
+    if params[:name]
+      @customers = Customer.where("phone_num=? or name=?",params[:phone_num],params[:name])
+    else
+      @customers = Customer.all
+    end
   end
 
   def search
@@ -39,7 +44,7 @@ class CustomersController < ApplicationController
 private
 
   def customer_params
-    params.require(:customer).permit(:name, :phone_num, :address, :allergy, :note, :is_active, :age, :book_id)
+    params.permit(:name, :phone_num, :address, :allergy, :note, :is_active, :age, :book_id)
   end
 
 end

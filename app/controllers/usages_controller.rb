@@ -1,12 +1,13 @@
 class UsagesController < ApplicationController
   def index
-    @usages = Usages.all
     @usage = Usage.new
+    @usages = Usage.all
   end
 
   def create
     @usage = Usage.new(course_params)
     @usage.save
+    @usages = Usage.all
   end
 
   private
