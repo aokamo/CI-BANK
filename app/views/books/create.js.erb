@@ -1,0 +1,3 @@
+$('#input').val("");
+$('#exampleModal').modal('hide');
+$('.books').html("<%= escape_javascript(render 'books', books: @books) %>")

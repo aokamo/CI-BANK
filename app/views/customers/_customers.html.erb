@@ -1,0 +1,13 @@
+    <tr>
+      <th>顧客ID</th>
+      <th>名前</th>
+      <th>電話番号</th>
+      <th>前回来店</th>
+    </tr>
+    <% customers.each do |c| %>
+    <tr>
+      <td><%= c.id %></td>
+      <td><%= c.name %></td>
+      <td><%= c.phone_num %></td>
+    </tr>
+    <% end %>

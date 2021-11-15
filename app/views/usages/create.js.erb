@@ -1,0 +1,3 @@
+$('#usage_name').val("");
+$('#exampleModal').modal('hide');
+$('.usages').html("<%= escape_javascript(render 'usages', usages: @usages) %>")

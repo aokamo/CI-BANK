@@ -1,0 +1,5 @@
+<h2>予約編集</h2>
+  <%= form_with model:@book, url: edit_book_path do |f| %>
+    <%= render 'form', f: f %>
+    <%= f.submit "更新" %>
+  <% end %>

@@ -1,0 +1,2 @@
+class CustomerBook < ApplicationRecord
+end

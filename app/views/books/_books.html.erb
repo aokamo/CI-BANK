@@ -1,0 +1,22 @@
+      <tr>
+        <th>TN</th>
+        <th>TIME</th>
+        <th>name</th>
+        <th>people</th>
+        <th>allergy</th>
+        <th>note</th>
+      </tr>
+      <% books.each do |b| %>
+        <tr>
+          <td><%= b.table_num %></td>
+          <td>
+            <% if b.visit_time.present? %>
+              <%= b.visit_time.strftime("%Y年 %m月 %d日 %X") %>
+            <% end %>
+          </td>
+          <td><%= b.customer.name %></td>
+          <td><%= b.people %></td>
+          <td><%= b.customer.allergy %></td>
+          <td><%= b.note %></td>
+        </tr>
+      <% end %>
