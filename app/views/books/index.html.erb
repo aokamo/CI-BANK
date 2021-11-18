@@ -1,7 +1,9 @@
 <div class="container">
-  <div class="sidebar">
+  <div class="row">
+    <div class="sidebar col-4">
+      <div id="calendar"></div>
   </div>
-  <div class="main">
+  <div class="main col-7">
     <div class="bar">
       <ul>
         <li>
@@ -14,6 +16,7 @@
     <table class="main-content">
       <%= render 'books', books: @books %>
     </table>
+    </div>
   </div>
 </div>
 

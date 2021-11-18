@@ -1,22 +1,26 @@
-      <tr>
-        <th>TN</th>
-        <th>TIME</th>
-        <th>name</th>
-        <th>people</th>
-        <th>allergy</th>
-        <th>note</th>
-      </tr>
-      <% books.each do |b| %>
-        <tr>
-          <td><%= b.table_num %></td>
-          <td>
-            <% if b.visit_time.present? %>
-              <%= b.visit_time.strftime("%Y年 %m月 %d日 %X") %>
-            <% end %>
-          </td>
-          <td><%= b.customer.name %></td>
-          <td><%= b.people %></td>
-          <td><%= b.customer.allergy %></td>
-          <td><%= b.note %></td>
-        </tr>
+<tr>
+  <th>TN</th>
+  <th>名前</th>
+  <th>来店予定</th>
+  <th>人数</th>
+  <th>顧客アレルギー</th>
+  <th>他アレルギー</th>
+  <th>予約備考</th>
+  <th>顧客備考</th>
+</tr>
+<% books.each do |b| %>
+  <tr>
+    <td><%= b.table_num %></td>
+    <td><%= b.customer.name %></td>
+    <td>
+      <% if b.start_at.present? %>
+        <%= b.start_at.strftime("%Y年 %m月 %d日 %X") %>
       <% end %>
+    </td>
+    <td><%= b.people %></td>
+    <td><%= b.allergy %></td>
+    <td><%= b.other_allergy %></td>
+    <td><%= b.note %></td>
+    <td><%= b.customer.note %></td>
+  </tr>
+<% end %>

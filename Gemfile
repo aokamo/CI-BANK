@@ -85,3 +85,6 @@ gem "refile-mini_magick"
 gem 'dotenv-rails'
 #ユーザー認証
 gem 'devise'
+
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'

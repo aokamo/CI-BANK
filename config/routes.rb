@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
   #顧客検索
   get 'search' => 'customers#search'
+
   # get ''
 end

@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require fullcalendar
  */
 
 @import "bootstrap";
@@ -47,6 +48,10 @@ section {
   list-style: none;
 }
 
+.bar li{
+  list-style: none;
+}
+
 .main-nav li{
   margin-left: 36px;
 }
@@ -66,3 +71,5 @@ section {
   width: 210px;
   margin-top: 14px;
 }
+
+.fc-time{ display : none; }

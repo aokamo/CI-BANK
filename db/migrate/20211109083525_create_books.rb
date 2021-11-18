@@ -6,7 +6,8 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.integer :course_id
       t.string :people
       t.string :table_num
-      t.datetime :visit_time
+      t.datetime :start_at
+      t.datetime :end_at
       t.text :note
       t.string :drink_fee
       t.string :feast_fee

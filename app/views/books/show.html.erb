@@ -1,0 +1,23 @@
+<h2>予約詳細</h2>
+<table class="book_show_content">
+  <tr>
+    <th>ID</th>
+    <th>TN</th>
+    <th>名前</th>
+    <th>電話番号</th>
+    <th>来店予定</th>
+    <th>人数</th>
+    <th>アレルギー</th>
+    <th>備考</th>
+  </tr>
+  <tr>
+    <th><%= @book.customer.id %></th>
+    <th></th>
+    <th><%= @book.customer.name %></th>
+    <th><%= @book.customer.phone_num %></th>
+    <th><%= @book.start_at %></th>
+    <th><%= @book.people %></th>
+    <th><%= @book.customer.allergy %></th>
+    <th><%= @book.note %></th>
+  </tr>
+</table>

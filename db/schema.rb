@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_15_103712) do
+ActiveRecord::Schema.define(version: 2021_11_18_105543) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -44,7 +44,8 @@ ActiveRecord::Schema.define(version: 2021_11_15_103712) do
     t.integer "course_id"
     t.string "people"
     t.string "table_num"
-    t.datetime "visit_time"
+    t.datetime "start_at"
+    t.datetime "end_at"
     t.text "note"
     t.string "drink_fee"
     t.string "feast_fee"
@@ -52,7 +53,9 @@ ActiveRecord::Schema.define(version: 2021_11_15_103712) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "tablenumber_id"
+    t.string "allergy"
     t.string "name"
+    t.string "other_allergy"
   end
 
   create_table "courses", force: :cascade do |t|

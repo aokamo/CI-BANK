@@ -1,0 +1,10 @@
+<% @books.each do |book| %>
+  <%#= book.TN %>
+  <p><%= book.customer.name %>様</p>
+
+<% end %>
+
+
+
+
+<%= link_to "back", books_path, data: {"turbolinks"=>false} %>
