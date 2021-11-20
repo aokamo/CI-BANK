@@ -1,16 +1,17 @@
 class TablenumbersController < ApplicationController
   def index
-    @tablernumbers = Tablenumber.all
+    @tablenumbers = Tablenumber.all
     @tablenumber = Tablenumber.new
   end
 
   def create
     @tablenumber = Tablenumber.new(tablenumber_params)
     @tablenumber.save
+    @tablenumbers = Tablenumber.all
   end
 
   private
-  def course_params
+  def tablenumber_params
     params.require(:tablenumber).permit(:name)
   end
 end

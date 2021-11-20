@@ -88,3 +88,6 @@ gem 'devise'
 
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+group :production do
+  gem 'mysql2'
+end

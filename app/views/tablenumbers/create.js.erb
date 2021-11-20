@@ -1,2 +1,3 @@
-$("textfield").val("");
-$('#exampleModal').modal('hide')
+$('#input').val("");
+$('#exampleModal').modal('hide');
+$('.tablenumbers').html("<%= escape_javascript(render 'tablenumbers', tablenumbers: @tablenumbers) %>")
