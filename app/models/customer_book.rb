@@ -1,2 +1,0 @@
-class CustomerBook < ApplicationRecord
-end
