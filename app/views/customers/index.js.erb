@@ -1,0 +1,3 @@
+console.log("<%= @book.customer.phone_num %>")
+$('#modal_book').html("<%= escape_javascript( render partial: 'books/modal_book', locals: {book: @book}) %>")
+$('#bookModal').modal('show')

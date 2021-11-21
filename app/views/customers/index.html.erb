@@ -13,38 +13,34 @@
       <div class="bar">
         <ul>
           <li>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#customerModal">
               顧客登録
             </button>
           </li>
         </ul>
       </div>
-    <table class = "customer_index">
-      <%= render 'customers', customers: @customers %>
-    </table>
+      <%= render 'customers', customers: @customers, book: @book %>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+      予約登録
+      </button>
   </div>
 </div>
-    <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">新規顧客登録</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <%= form_with model: @customer do |f| %>
-          <div class="modal-body">
-            <div class="form-group">
-              <%= render 'form', f: f %>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-            <%= f.submit "登録する", class: "btn btn-primary" %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
+
+<%= render partial: 'modal_customer', locals: {customer: @customer} %>
+
+<div id="modal_book">
+  <%= render partial: 'books/modal_book', locals: {book: @book} %>
+</div>
+
+<script>
+  //$(".user_select").on("click",function(){
+   // customer_id = $(this).兄弟のcustomer_idを取得
+
+    //$.ajax{
+      //serverに/customersにgetでおくる(paramterにcustomer_idをつける)
+    //}
+
+
+  //})
+
+</script>

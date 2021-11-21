@@ -1,5 +1,9 @@
 <%= f.label :phone_num %><br>
-<%= f.telephone_field :phone_num %>（ハイフンなし）<br>
+<% if book.customer.nil? %>
+  <%= f.telephone_field :phone_num %>（ハイフンなし）<br>
+<% else %>
+  <%= f.telephone_field :phone_num, value: book.customer.phone_num %>（ハイフンなし）<br>
+<% end %>
 <%= f.label :name %><br>
 <%= f.text_field :name, autofocus: true %><br>
 <%= f.label :date, class: 'control-label' %>

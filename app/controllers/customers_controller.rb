@@ -28,6 +28,17 @@ class CustomersController < ApplicationController
 
   def index
     @course = Course.new
+
+    @book = Book.new
+
+    if params[:customer_id].present?
+      customer = Customer.find(params[:customer_id])
+      @book.name = customer.name
+      @book.customer = customer
+      @book.customer.phone_num = customer.phone_num
+      @book.allergy = customer.allergy
+    end
+
     if params[:name]
       @customers = Customer.where("phone_num=? or name=?",params[:phone_num],params[:name])
     else

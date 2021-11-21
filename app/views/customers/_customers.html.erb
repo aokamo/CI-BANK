@@ -1,13 +1,19 @@
-    <tr>
-      <th>顧客ID</th>
-      <th>名前</th>
-      <th>電話番号</th>
-      <th>前回来店</th>
-    </tr>
-    <% customers.each do |c| %>
-    <tr>
-      <td><%= c.id %></td>
-      <td><%= c.name %></td>
-      <td><%= c.phone_num %></td>
-    </tr>
-    <% end %>
+<table class = "customer_index">
+  <tr>
+    <th></th>
+    <th>顧客ID</th>
+    <th>名前</th>
+    <th>電話番号</th>
+    <th>前回来店</th>
+  </tr>
+  <% customers.each do |c| %>
+  <tr>
+    <td>
+      <%= link_to "新規予約作成", customers_path(customer_id: c.id), remote: true, class: "btn btn-primary" %>
+    </td>
+    <td class="customer_id"><%= c.id %></td>
+    <td><%= c.name %></td>
+    <td><%= c.phone_num %></td>
+  </tr>
+  <% end %>
+</table>
