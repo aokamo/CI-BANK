@@ -7,9 +7,25 @@ class BooksController < ApplicationController
 
   def index
     @book = Book.new
-    @books = Book.all
+    search_date = Date.today
+    @books = Book.where(start_at: search_date.in_time_zone.all_day)
     @customer = Customer.new
     @customers = Customer.all
+    @tablenumbers = Tablenumber.all
+  end
+
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    @visit = book_params[:date] +" "+ book_params[:time]
+    @book.start_at = @visit.to_datetime
+    if
+      @book.update(book_params)
+      redirect_to books_path, notice: "予約情報が更新されました"
+    end
   end
 
   def create
@@ -43,6 +59,6 @@ class BooksController < ApplicationController
 
 private
   def book_params
-    params.require(:book).permit(:phone_num, :name, :people, :allergy, :note, :date, :time, :other_allergy )
+    params.require(:book).permit(:phone_num, :name, :people, :allergy, :note, :date, :time, :other_allergy, :tablenumber_id)
   end
 end

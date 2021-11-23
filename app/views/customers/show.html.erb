@@ -1,52 +1,19 @@
 <h2>顧客詳細</h2>
-  <table class = "cuustomer_show_table" >
+  <table class = "customer_show_table" >
     <tr>
       <th>顧客ID</th>
-      <td><%= @customer.id %></td>
-    </tr>
-    <tr>
       <th>名前</th>
-      <td><%= @customer.name %></td>
-    </tr>
-    <tr>
       <th>電話番号</th>
-      <td><%= @customer.phone_num %></td>
-    </tr>
-    <tr>
-      <th>住所</th>
-      <td><%= @customer.address %></td>
-    </tr>
-    <tr>
-      <th>年齢</th>
-      <td><%= @customer.age %></td>
-    </tr>
-    <tr>
       <th>アレルギー</th>
-      <td><%= @customer.allergy %></td>
-    </tr>
-    <tr>
       <th>備考</th>
-      <td><%= @customer.note %></td>
     </tr>
     <tr>
-      <th>ドリンク平均金額</th>
-      <td><%#= @customer_avg_drink %>円</td>
+      <th><%= @customer.id %></th>
+      <th><%= @customer.name %></th>
+      <th><%= @customer.phone_num %></th>
+      <th><%= @customer.allergy %></th>
+      <th><%= @customer.note %></th>
     </tr>
-    <tr>
-      <th>料理平均金額</th>
-      <td><%#=@customer_avg_feast %>円</td>
-    </tr>
-  </table>
-<h2>来店履歴</h2>
-  <table class = "visit_history">
-    <tr>
-      <th>時間</th>
-      <th>人数</th>
-    </tr>
-  <% @books.each do |b| %>
-    <tr>
-      <td><%= b.start_at %></td>
-      <th><%= b.people %></th>
-    </tr>
-  <% end %>
+<%= link_to '編集', edit_customer_path(@customer), class: "customer_#{@customer.id} btn btn-outline-secondary btn-block" %>
+<%= link_to '削除', customer_path(@customer), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_customer_#{@customer.id}"%>
   </table>

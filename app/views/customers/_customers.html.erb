@@ -12,8 +12,10 @@
       <%= link_to "新規予約作成", customers_path(customer_id: c.id), remote: true, class: "btn btn-primary" %>
     </td>
     <td class="customer_id"><%= c.id %></td>
-    <td><%= c.name %></td>
+    <td><%= link_to c.name, customer_path(c), class: "c_#{c.id}" %></td>
     <td><%= c.phone_num %></td>
+    <td></td>
+    <td><%= link_to '編集', edit_customer_path(c), class: "c_#{c.id} btn btn-outline-secondary btn-block" %></td>
   </tr>
   <% end %>
 </table>

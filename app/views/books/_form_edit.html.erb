@@ -1,0 +1,19 @@
+<%= f.label :phone_num %><br>
+<%= book.customer.phone_num %><br>
+<%= f.label :name %><br>
+<%= book.customer.name %><br>
+<%= f.label :date, class: 'control-label' %>
+<%= f.date_field :date, class: 'form-control' %>
+<%= f.label :time, class: 'control-label' %>
+<%= f.time_field :time, class: 'form-control' %>
+<%= f.label :people %><br>
+<%= f.number_field :people %><br>
+
+<%= f.label :allergy %><br>
+<%= f.text_field :allergy %><br>
+
+<%= f.label :other_allergy %><br>
+<%= f.text_field :other_allergy %><br>
+
+<%= f.label :note %><br>
+<%= f.text_area :note %><br>

@@ -1,4 +1,5 @@
 class UsagesController < ApplicationController
+  before_action :authenticate_admin!
   def index
     @usage = Usage.new
     @usages = Usage.all

@@ -8,7 +8,7 @@
         TN追加
       </button>
     </div>
-    <div class="col-5 sidebar courses offset-2">
+    <div class="col-5 sidebar tablenumbers offset-2">
       <%= render 'tablenumbers', tablenumbers: @tablenumbers %>
     </div>
   </div>
@@ -24,7 +24,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <%= form_with model:@tablenumber do |f| %>
+      <%= form_with model: @tablenumber do |f| %>
         <div class="modal-body">
           <div class="form-group">
             <%= f.label :name, "TN" %>

@@ -1,3 +1,4 @@
 class Tablenumber < ApplicationRecord
-  belongs_to :book
+  has_many :books
+  validates :name, presence: true
 end

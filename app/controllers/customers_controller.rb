@@ -23,7 +23,6 @@ class CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
-    @books = @customer.book.all
   end
 
   def index
@@ -41,16 +40,14 @@ class CustomersController < ApplicationController
 
     if params[:name]
       @customers = Customer.where("phone_num=? or name=?",params[:phone_num],params[:name])
+    elsif params[:keyword]
+      @customers = Customer.search(params[:keyword])
+      @keyword = params[:keyword]
     else
       @customers = Customer.all
     end
   end
 
-  def search
-    @customers = Customer.search(params[:keyword])
-    @keyword = params[:keyword]
-    render "index"
-  end
 
 private
 

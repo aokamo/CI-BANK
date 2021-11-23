@@ -1,4 +1,5 @@
 class TablenumbersController < ApplicationController
+  before_action :authenticate_admin!
   def index
     @tablenumbers = Tablenumber.all
     @tablenumber = Tablenumber.new

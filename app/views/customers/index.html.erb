@@ -3,7 +3,7 @@
   <div class="row">
     <div class="sidebar col-4">
     <div class="search-form">
-    <%= form_with url: search_path, method: :get, local: true do |f| %>
+    <%= form_with url: customers_path, method: :get, local: true do |f| %>
       <%= f.text_field :keyword, value: @keyword %>
       <%= f.submit "検索" %>
     <% end %>
@@ -20,9 +20,6 @@
         </ul>
       </div>
       <%= render 'customers', customers: @customers, book: @book %>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
-      予約登録
-      </button>
   </div>
 </div>
 

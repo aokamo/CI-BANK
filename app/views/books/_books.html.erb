@@ -1,26 +1,37 @@
-<tr>
-  <th>TN</th>
-  <th>名前</th>
-  <th>来店予定</th>
-  <th>人数</th>
-  <th>顧客アレルギー</th>
-  <th>他アレルギー</th>
-  <th>予約備考</th>
-  <th>顧客備考</th>
-</tr>
-<% books.each do |b| %>
-  <tr>
-    <td><%= b.table_num %></td>
-    <td><%= b.customer.name %></td>
-    <td>
-      <% if b.start_at.present? %>
-        <%= b.start_at.strftime("%Y年 %m月 %d日 %X") %>
-      <% end %>
-    </td>
-    <td><%= b.people %></td>
-    <td><%= b.allergy %></td>
-    <td><%= b.other_allergy %></td>
-    <td><%= b.note %></td>
-    <td><%= b.customer.note %></td>
-  </tr>
-<% end %>
+
+  <table class="main-content">
+    <tr>
+      <th>TN</th>
+      <th></th>
+      <th></th>
+      <th>名前</th>
+      <th>来店予定</th>
+      <th>人数</th>
+      <th>顧客アレルギー</th>
+      <th>他アレルギー</th>
+      <th>予約備考</th>
+    </tr>
+    <% books.each do |b| %>
+      <tr>
+        <td>
+          <%= form_with model: b, url: book_path(b) do |f| %>
+            <%= f.select :tablenumber_id, @tablenumbers.map{ |tablenumber| [tablenumber.name, tablenumber.id] } %>
+            <%= f.submit "TN更新", class: "btn btn-primary" %>
+          <% end %>
+        </td>
+        <td></td>
+        <td><%= b.table_num %></td>
+        <td><%= link_to b.customer.name, book_path(b), class: "b_#{b.id}" %></td>
+        <td>
+          <% if b.start_at.present? %>
+            <%= b.start_at.strftime("%Y年 %m月 %d日 %X") %>
+          <% end %>
+        </td>
+        <td><%= b.people %></td>
+        <td><%= b.allergy %></td>
+        <td><%= b.other_allergy %></td>
+        <td><%= b.note %></td>
+        <td><%= link_to '編集', edit_book_path(b), class: "b_#{b.id} btn btn-outline-secondary btn-block" %></td>
+      </tr>
+    <% end %>
+  </table>
