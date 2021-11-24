@@ -1,25 +1,32 @@
-<h2>予約詳細</h2>
-<a class="btn btn-primary" href="/books" role="button">予約一覧へ戻る</a>
-<table class="book_show_content">
-  <tr>
-    <th>ID</th>
-    <th>TN</th>
-    <th>名前</th>
-    <th>電話番号</th>
-    <th>来店予定</th>
-    <th>人数</th>
-    <th>アレルギー</th>
-    <th>備考</th>
-  </tr>
-  <tr>
-    <td><%= @book.customer.id %></td>
-    <td></td>
-    <td><%= @book.customer.name %></td>
-    <td><%= @book.customer.phone_num %></td>
-    <td><%= @book.start_at %></td>
-    <td><%= @book.people %></td>
-    <td><%= @book.customer.allergy %></td>
-    <td><%= @book.note %></td>
-    <td><%= link_to '編集', edit_book_path(@book), class: "b_#{@book.id} btn btn-outline-secondary btn-block" %></td>
-  </tr>
-</table>
+<div class="container">
+  <h2>予約詳細</h2>
+  <a class="btn btn-primary" href="/books" role="button">予約一覧へ戻る</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>TN</th>
+        <th>名前</th>
+        <th>電話番号</th>
+        <th>来店予定</th>
+        <th>人数</th>
+        <th>アレルギー</th>
+        <th>備考</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @book.customer.id %></td>
+        <td></td>
+        <td><%= @book.customer.name %></td>
+        <td><%= @book.customer.phone_num %></td>
+        <td><%= @book.start_at %></td>
+        <td><%= @book.people %></td>
+        <td><%= @book.customer.allergy %></td>
+        <td><%= @book.note %></td>
+        <td><%= link_to '編集', edit_book_path(@book), class: "b_#{@book.id} btn btn-outline-secondary btn-block" %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

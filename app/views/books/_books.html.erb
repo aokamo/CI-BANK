@@ -36,8 +36,8 @@
           <td><%= b.allergy %></td>
           <td><%= b.other_allergy %></td>
           <td><%= b.note %></td>
-          <td><%= link_to '詳細', book_path(b), class: "b_#{b.id} btn btn-outline-secondary btn-block" %></td>
-          <td><%= link_to '編集', edit_book_path(b), class: "b_#{b.id} btn btn-outline-secondary btn-block" %></td>
+          <td><%= link_to '詳細', book_path(b), class: "b_#{b.id} btn btn-outline-info" %></td>
+          <td><%= link_to '編集', edit_book_path(b), class: "b_#{b.id} btn btn-outline-secondary" %></td>
         </tr>
       <% end %>
     </tbody>
