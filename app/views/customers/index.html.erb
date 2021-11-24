@@ -1,26 +1,26 @@
-<h2>顧客一覧</h2>
 <div class="container">
   <div class="row">
-    <div class="sidebar col-4">
-    <div class="search-form">
-    <%= form_with url: customers_path, method: :get, local: true do |f| %>
-      <%= f.text_field :keyword, value: @keyword %>
-      <%= f.submit "検索" %>
-    <% end %>
-    </div>
     <p id="notice"><%= notice %></p>
-    </div>
-    <div class="main col-8">
-      <div class="bar">
-        <ul>
+        <ul class="bar">
+          <li><h2>顧客一覧</h2></li>
           <li>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#customerModal">
               顧客登録
             </button>
           </li>
+          <li>
+            <div class="search-form">
+              <%= form_with url: customers_path, method: :get, local: true do |f| %>
+                <%= f.text_field :keyword, value: @keyword %>
+                <%= f.submit "検索" %>
+              <% end %>
+            </div>
+          </li>
         </ul>
+      <%= render 'customers', customers: @customers, book: @book, last_visit: @last_visit %>
+      <div class="pagenate">
+        <%= paginate @customers %>
       </div>
-      <%= render 'customers', customers: @customers, book: @book %>
   </div>
 </div>
 

@@ -1,22 +1,20 @@
 <div class="container">
-  <div class="row">
-    <div class="sidebar col-4">
-      <div id="calendar"></div>
-    </div>
-  <div class="main col-8">
-    <div class="bar">
-      <ul>
+      <ul class="bar">
+        <li>
+            <h2>本日の予約</h2>
+        </li>
         <li>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bookModal">
             予約登録
           </button>
         </li>
       </ul>
-    </div>
-      <h2>本日の予約</h2>
+    <div class="main col-12">
       <%= render 'books', books: @books %>
     </div>
-  </div>
+    <div class="sidebar col-12">
+      <div id="calendar"></div>
+    </div>
 </div>
 
 <!-- Modal -->

@@ -31,7 +31,7 @@ section {
 }
 
 .hero {
-  background-image: image-url('coffee-g105921125_1920.jpg');
+  background-image: image-url('shard-g80a6cc450_1920');
   text-align: center;
   padding-top: 20vh;
 }
@@ -49,12 +49,21 @@ section {
   margin-bottom: auto;
 }
 
-.bar li{
-  list-style: none;
-}
-
 .main-nav li{
   margin-left: 36px;
+}
+
+
+.bar{
+  display :flex;
+  padding-top: 50px;
+
+}
+
+.bar li{
+  list-style: none;
+  margin-right: 36px;
+  margin-left: 20px;
 }
 
 .link{
@@ -97,4 +106,48 @@ section {
   text-align: left;
   padding-top: 5vh;
   padding-left: 10vh;
+}
+
+.table{
+  border-collapse: collapse;
+  margin: 0 auto;
+  padding: 0;
+  margin-bottom: 50px;
+}
+
+.table tr {
+  background-color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.table tr:nth-child(even){
+  background-color: #eee
+}
+
+.table th,
+.table td {
+  padding: .35em 1em;
+}
+
+.table thead th {
+    font-size: .85em;
+    padding: 1em;
+}
+
+.table thead tr{
+  background-color: #12a4c4;
+  color:#fff;
+}
+
+.table tbody th {
+  text-align: left;
+  font-size: .8em;
+}
+
+.table tfoot tr{
+  background-color: #12a4c4;
+}
+
+.pagenate{
+  margin: 0 auto;
 }

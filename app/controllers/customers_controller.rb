@@ -17,8 +17,11 @@ class CustomersController < ApplicationController
 
   def update
     @customer = Customer.find(params[:id])
-    @customer.update(customer_params)
-    redirect_to customer_path(@cusromer)
+    if @customer.update(customer_params)
+      redirect_to customer_path(@customer.id), notice: "顧客情報が更新されました"
+    else
+      render :edit
+    end
   end
 
   def show
@@ -28,9 +31,8 @@ class CustomersController < ApplicationController
 
   def index
     @course = Course.new
-
     @book = Book.new
-
+    # @last_visit = customer.book.where("start_at <= ?", Time.now).limit(1)
     if params[:customer_id].present?
       customer = Customer.find(params[:customer_id])
       @book.name = customer.name
@@ -47,6 +49,7 @@ class CustomersController < ApplicationController
     else
       @customers = Customer.all
     end
+      @customers = Customer.all.page(params[:page]).per(15)
   end
 
   def destroy
@@ -59,7 +62,7 @@ class CustomersController < ApplicationController
 private
 
   def customer_params
-    params.permit(:name, :phone_num, :address, :allergy, :note, :is_active, :age, :book_id)
+    params.require(:customer).permit(:name, :phone_num, :address, :allergy, :note, :is_active, :age, :book_id)
   end
 
 end

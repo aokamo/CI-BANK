@@ -5,6 +5,7 @@
       <th>名前</th>
       <th>電話番号</th>
       <th>アレルギー</th>
+      <th>年齢</th>
       <th>備考</th>
     </tr>
     <tr>
@@ -12,6 +13,7 @@
       <th><%= @customer.name %></th>
       <th><%= @customer.phone_num %></th>
       <th><%= @customer.allergy %></th>
+      <th><%= @customer.age %>歳</th>
       <th><%= @customer.note %></th>
     </tr>
 <%= link_to '編集', edit_customer_path(@customer), class: "customer_#{@customer.id} btn btn-outline-secondary btn-block" %>

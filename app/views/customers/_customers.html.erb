@@ -1,20 +1,33 @@
-<table class = "customer_index">
-  <tr>
-    <th></th>
-    <th>顧客ID</th>
-    <th>名前</th>
-    <th>電話番号</th>
-    <th>前回来店</th>
-  </tr>
-  <% customers.each do |c| %>
-  <tr>
-    <td>
-      <%= link_to "新規予約作成", customers_path(customer_id: c.id), remote: true, class: "btn btn-primary" %>
-    </td>
-    <td class="customer_id"><%= c.id %></td>
-    <td><%= link_to c.name, customer_path(c), class: "c_#{c.id}" %></td>
-    <td><%= c.phone_num %></td>
-    <td></td>
-  </tr>
-  <% end %>
+<table class = "table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>顧客ID</th>
+      <th>名前</th>
+      <th>電話番号</th>
+      <th>前回来店</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% customers.each do |c| %>
+    <tr>
+      <td>
+        <%= link_to "新規予約作成", customers_path(customer_id: c.id), remote: true, class: "btn btn-primary" %>
+      </td>
+      <td class="customer_id"><%= c.id %></td>
+      <td><%= link_to c.name, customer_path(c), class: "c_#{c.id}" %> 様</td>
+      <td><%= c.phone_num %></td>
+      <td><%#= link_to c.last_visit.start_at, book_path(params[:id]) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </tfoot>
 </table>
