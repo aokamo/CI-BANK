@@ -40,6 +40,3 @@
 - JS ライブラリ：jQuery
 - IDE：Cloud9
 
-## 使用素材
-
-- <div>ロゴは <a href="https://www.designevo.com/jp/" title="無料オンラインロゴメーカー">DesignEvo</a> ロゴメーカーさんに作られる</div>
