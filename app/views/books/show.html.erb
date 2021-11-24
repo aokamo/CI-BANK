@@ -12,13 +12,14 @@
     <th>備考</th>
   </tr>
   <tr>
-    <th><%= @book.customer.id %></th>
-    <th></th>
-    <th><%= @book.customer.name %></th>
-    <th><%= @book.customer.phone_num %></th>
-    <th><%= @book.start_at %></th>
-    <th><%= @book.people %></th>
-    <th><%= @book.customer.allergy %></th>
-    <th><%= @book.note %></th>
+    <td><%= @book.customer.id %></td>
+    <td></td>
+    <td><%= @book.customer.name %></td>
+    <td><%= @book.customer.phone_num %></td>
+    <td><%= @book.start_at %></td>
+    <td><%= @book.people %></td>
+    <td><%= @book.customer.allergy %></td>
+    <td><%= @book.note %></td>
+    <td><%= link_to '編集', edit_book_path(@book), class: "b_#{@book.id} btn btn-outline-secondary btn-block" %></td>
   </tr>
 </table>

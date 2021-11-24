@@ -21,7 +21,7 @@
         </td>
         <td></td>
         <td><%= b.table_num %></td>
-        <td><%= link_to b.customer.name, book_path(b), class: "b_#{b.id}" %></td>
+        <td><%= link_to b.customer.name, customer_path(b.customer), class: "b_customer_#{b.customer}" %></td>
         <td>
           <% if b.start_at.present? %>
             <%= b.start_at.strftime("%Y年 %m月 %d日 %X") %>
@@ -31,6 +31,7 @@
         <td><%= b.allergy %></td>
         <td><%= b.other_allergy %></td>
         <td><%= b.note %></td>
+        <td><%= link_to '詳細', book_path(b), class: "b_#{b.id} btn btn-outline-secondary btn-block" %></td>
         <td><%= link_to '編集', edit_book_path(b), class: "b_#{b.id} btn btn-outline-secondary btn-block" %></td>
       </tr>
     <% end %>
