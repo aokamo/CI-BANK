@@ -4,16 +4,16 @@
   <nav>
     <ul class="main-nav">
       <li>
-        <strong><%= link_to "予約一覧", books_path, data: {"turbolinks"=>false}, class: "link" %></strong>
+        <strong><%= link_to "予約一覧", books_path, data: {"turbolinks"=>false}, class: "link btn-flat-vertical-border" %></strong>
       </li>
       <li>
-        <strong><%= link_to "顧客一覧", customers_path, class: "link" %></strong>
+        <strong><%= link_to "顧客一覧", customers_path, class: "link btn-flat-vertical-border" %></strong>
       </li>
       <li>
-        <strong><%= link_to "テーブルナンバー", tablenumbers_path, class: "link"  %></strong>
+        <strong><%= link_to "テーブルナンバー", tablenumbers_path, class: "link btn-flat-vertical-border"  %></strong>
       </li>
       <li>
-        <strong><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "link"  %></strong>
+        <strong><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "link btn-flat-vertical-border"  %></strong>
       </li>
     </ul>
   </nav>
@@ -21,7 +21,7 @@
   <nav>
     <ul class="main-nav">
       <li>
-        <%= link_to "ログイン", new_admin_session_path %>
+        <%= link_to "ログイン", new_admin_session_path, class: "link btn-flat-vertical-border" %>
       </li>
     </ul>
   </nav>
