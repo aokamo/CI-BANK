@@ -17,3 +17,21 @@
 <%= link_to '編集', edit_customer_path(@customer), class: "customer_#{@customer.id} btn btn-outline-secondary btn-block" %>
 <%= link_to '削除', customer_path(@customer), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_customer_#{@customer.id}"%>
   </table>
+  <table class="customer_book_index">
+    <tr>
+      <th>来店日時</th>
+      <th>人数</th>
+      <th>顧客アレルギー</th>
+      <th>他アレルギー</th>
+      <th>予約備考</th>
+    </tr>
+    <% @books.each do |b| %>
+    <tr>
+      <td><%= b.start_at %></td>
+      <td><%= b.people %></td>
+      <td><%= b.allergy %></td>
+      <td><%= b.other_allergy %></td>
+      <td><%= b.note %></td>
+    </tr>
+    <% end %>
+  </table>
