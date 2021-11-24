@@ -12,10 +12,8 @@
 
   <body data-turbolinks="fal">
     <div class="page-header wrapper">
-      <h1><a href="/"><%= image_tag "CI-BANK_logo.png", class: "logo", alt: "CI-BANKホーム" %></a></h1>
       <%= render 'layouts/header' %>
     </div>
-    <p id="notice"><%= notice %></p>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>

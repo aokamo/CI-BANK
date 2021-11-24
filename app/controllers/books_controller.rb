@@ -20,10 +20,13 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
-    @visit = book_params[:date] +" "+ book_params[:time]
-    @book.start_at = @visit.to_datetime
-    if
-      @book.update(book_params)
+
+    if params.key?(:date) && params.key?(:time)
+      @visit = book_params[:date] +" "+ book_params[:time]
+      @book.start_at = @visit.to_datetime
+    end
+
+    if @book.update(book_params)
       redirect_to books_path, notice: "予約情報が更新されました"
     end
   end

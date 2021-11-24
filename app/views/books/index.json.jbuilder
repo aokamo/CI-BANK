@@ -1,4 +1,6 @@
 json.array!(Book.all) do |book|
+  next if book.customer.nil?
+  
   json.extract! book, :id
   json.start book.start_at
   json.end book.end_at

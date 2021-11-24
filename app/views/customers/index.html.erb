@@ -8,6 +8,7 @@
       <%= f.submit "検索" %>
     <% end %>
     </div>
+    <p id="notice"><%= notice %></p>
     </div>
     <div class="main col-8">
       <div class="bar">
@@ -28,16 +29,3 @@
 <div id="modal_book">
   <%= render partial: 'books/modal_book', locals: {book: @book} %>
 </div>
-
-<script>
-  //$(".user_select").on("click",function(){
-   // customer_id = $(this).兄弟のcustomer_idを取得
-
-    //$.ajax{
-      //serverに/customersにgetでおくる(paramterにcustomer_idをつける)
-    //}
-
-
-  //})
-
-</script>

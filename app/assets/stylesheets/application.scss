@@ -31,14 +31,13 @@ section {
 }
 
 .hero {
-  background-image: image-url('guest-room-g53728592a_1920.jpg');
+  background-image: image-url('coffee-g105921125_1920.jpg');
   text-align: center;
   padding-top: 20vh;
 }
 
 .info {
-  background-image: image-url('people-ge4125f94b_1920');
-  text-align: center;
+  background-image: image-url('lamp-g7cba80737_1920.jpg');
   padding-top: 10vh;
 }
 
@@ -68,8 +67,27 @@ section {
 }
 
 .logo{
-  width: 210px;
+  width: 130px;
+  text-align: center;
   margin-top: 14px;
 }
 
-.fc-time{ display : none; }
+.fc-time{
+  display : none;
+}
+
+.top_title{
+  color: black;
+}
+
+.info_title{
+  color: #009bc2;
+  text-align: center;
+}
+
+.info_body{
+  color: white;
+  text-align: left;
+  padding-top: 5vh;
+  padding-left: 10vh;
+}

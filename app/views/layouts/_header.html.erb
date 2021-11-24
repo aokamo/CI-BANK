@@ -1,4 +1,5 @@
 
+<h1><a href="/"><%= image_tag "CI-BANK_text_logo.png", class: "logo", alt: "CI-BANKホーム" %></a></h1>
 <% if admin_signed_in? %>
   <nav>
     <ul class="main-nav">
@@ -7,12 +8,6 @@
       </li>
       <li>
         <%= link_to "顧客一覧", customers_path %>
-      </li>
-      <li>
-        <%= link_to "コース", courses_path %>
-      </li>
-      <li>
-        <%= link_to "利用目的", usages_path %>
       </li>
       <li>
         <%= link_to "テーブルナンバー", tablenumbers_path %>
