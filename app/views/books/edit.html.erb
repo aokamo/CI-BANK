@@ -1,5 +1,7 @@
+<div class="container">
 <h2>予約編集</h2>
   <%= form_with model: @book, url: book_path do |f| %>
     <%= render 'form_edit', f: f, book: @book %>
     <%= f.submit "更新" %>
   <% end %>
+</div>

@@ -53,6 +53,7 @@ group :development do
   gem 'bullet'
   #リーダブルコード
   gem 'rubocop', require: false
+  gem 'pry-byebug'
 end
 
 group :test do
