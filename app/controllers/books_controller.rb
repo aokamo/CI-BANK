@@ -7,11 +7,11 @@ class BooksController < ApplicationController
 
   def index
     @book = Book.new
-    search_date = Date.today
-    @books = Book.where(start_at: search_date.in_time_zone.all_day)
-    @customer = Customer.new
-    @customers = Customer.all
-    @tablenumbers = Tablenumber.all
+      search_date = Date.today
+      @books = Book.where(start_at: search_date.in_time_zone.all_day)
+      @customer = Customer.new
+      @customers = Customer.all
+      @tablenumbers = Tablenumber.all
   end
 
   def edit
@@ -68,7 +68,7 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-    redirect_to books_path
+    redirect_to books_path, notice: "予約は取り消されました"
   end
 
 private

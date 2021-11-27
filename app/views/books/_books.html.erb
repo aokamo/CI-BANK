@@ -13,6 +13,7 @@
         <th>予約備考</th>
         <th></th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody class="tbody">
@@ -38,11 +39,13 @@
           <td><%= b.note %></td>
           <td><%= link_to '詳細', book_path(b), class: "b_#{b.id} btn btn-outline-info" %></td>
           <td><%= link_to '編集', edit_book_path(b), class: "b_#{b.id} btn btn-outline-secondary" %></td>
+          <td><%= link_to '削除', book_path(b), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-outline-danger destroy_b_#{b.id}"%></td>
         </tr>
       <% end %>
     </tbody>
     <tfoot>
       <tr>
+        <th></th>
         <th></th>
         <th></th>
         <th></th>
