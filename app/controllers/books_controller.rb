@@ -20,7 +20,9 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
-    if !book_params[:date].empty? && !book_params[:time].empty?
+    if book_params[:date] == nil
+      @book.tablenumber_id = book_params[:tablenumber_id]
+    elsif book_params[:date] != nil && !book_params[:date].empty? && !book_params[:time].empty?
       @visit = book_params[:date] +" "+ book_params[:time]
       @book.start_at = @visit.to_datetime
       @book.people = book_params[:people]
