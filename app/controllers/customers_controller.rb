@@ -32,7 +32,6 @@ class CustomersController < ApplicationController
   def index
     @course = Course.new
     @book = Book.new
-    # @last_visit = customer.book.where("start_at <= ?", Time.now).limit(1)
     if params[:customer_id].present?
       customer = Customer.find(params[:customer_id])
       @book.name = customer.name
