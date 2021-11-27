@@ -17,7 +17,7 @@
             </div>
           </li>
         </ul>
-      <%= render 'customers', customers: @customers, book: @book, last_visit: @last_visit %>
+      <%= render 'customers', customers: @serch_result, book: @book, last_visit: @last_visit %>
       <div class="pagenate">
         <%= paginate @customers %>
       </div>

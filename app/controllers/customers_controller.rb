@@ -30,6 +30,7 @@ class CustomersController < ApplicationController
   end
 
   def index
+    @customer = Customer.new
     @course = Course.new
     @book = Book.new
     if params[:customer_id].present?
@@ -40,15 +41,15 @@ class CustomersController < ApplicationController
       @book.allergy = customer.allergy
     end
 
-    if params[:name]
-      @customers = Customer.where("phone_num=? or name=?",params[:phone_num],params[:name])
-    elsif params[:keyword]
-      @customers = Customer.search(params[:keyword])
+    if params[:name].present?
+      @serch_result = Customer.where("phone_num=? or name=?",params[:phone_num],params[:name])
+    elsif params[:keyword].present?
+      @serch_result = Customer.search(params[:keyword])
       @keyword = params[:keyword]
     else
-      @customers = Customer.all
+      @serch_result = Customer.all
     end
-      @customers = Customer.all.page(params[:page]).per(15)
+    @customers = Customer.all.page(params[:page]).per(15)
   end
 
   def destroy
