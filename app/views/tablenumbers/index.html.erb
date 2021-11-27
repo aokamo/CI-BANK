@@ -1,6 +1,6 @@
-<h2>TN一覧</h2>
 <div class="container mt-5">
   <div class="row">
+    <h2>TN一覧</h2>
     <div class="col-3 sidebar offset-1">
 <!--新規コース登録ボタン-->
 <!-- Button trigger modal -->
@@ -8,11 +8,11 @@
         TN追加
       </button>
     </div>
-    <div class="col-5 tablenumbers offset-2">
-      <%= render 'tablenumbers', tablenumbers: @tablenumbers %>
+      <div class="col-5 tablenumbers offset-2">
+        <%= render 'tablenumbers', tablenumbers: @tablenumbers %>
+      </div>
     </div>
   </div>
-</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

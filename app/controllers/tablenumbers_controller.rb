@@ -3,12 +3,22 @@ class TablenumbersController < ApplicationController
   def index
     @tablenumbers = Tablenumber.all
     @tablenumber = Tablenumber.new
+    if params[:tablenumber_id].present?
+      tablenumber = tablenumber.find(params[:id])
+      @tablenumber.name = tablenumber.name
+    end
   end
 
   def create
     @tablenumber = Tablenumber.new(tablenumber_params)
     @tablenumber.save
     @tablenumbers = Tablenumber.all
+  end
+
+    def destroy
+    @tablenumber = Tablenumber.find(params[:id])
+    @tablenumber.destroy
+    redirect_to tablenumbers_path
   end
 
   private

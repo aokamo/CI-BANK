@@ -2,6 +2,7 @@
   <div class="card mb-1">
     <div class="card-body">
       <p class="card-text"><%= t.name %></p>
+      <%= link_to '削除', tablenumber_path(t), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-outline-danger destroy_t_#{t.id}"%>
     </div>
   </div>
 <% end %>
