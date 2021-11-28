@@ -1,26 +1,28 @@
 <div class="container">
-  <div class="row">
+  <div class="">
     <p id="notice"><%= notice %></p>
-        <ul class="bar">
-          <li><h2>顧客一覧</h2></li>
-          <li>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#customerModal">
-              顧客登録
-            </button>
-          </li>
-          <li>
-            <div class="search-form mt-2">
-              <%= form_with url: customers_path, method: :get, local: true do |f| %>
-                <%= f.text_field :keyword, value: @keyword %>
-                <%= f.submit "検索" %>
-              <% end %>
-            </div>
-          </li>
-        </ul>
-      <%= render 'customers', customers: @serch_result, book: @book, last_visit: @last_visit %>
-      <div class="pagenate">
-        <%= paginate @customers %>
-      </div>
+    <ul class="bar">
+      <li><h2>顧客一覧</h2></li>
+      <li>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#customerModal">
+          顧客登録
+        </button>
+      </li>
+      <li>
+        <div class="search-form mt-2">
+          <%= form_with url: customers_path, method: :get, local: true do |f| %>
+            <%= f.text_field :keyword, value: @keyword %>
+            <%= f.submit "検索" %>
+          <% end %>
+        </div>
+      </li>
+    </ul>
+    <div class="customer_index">
+      <%= render 'customers', customers: @serch_result %>
+    </div>
+    <div class="pagenate">
+      <%= paginate @customers %>
+    </div>
   </div>
 </div>
 

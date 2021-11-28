@@ -9,32 +9,3 @@ Admin.create!(
  email: '1234567@gmail.com',
  password: '1234567'
 )
-
-Customer.create!(
- name: '岡本篤志',
- phone_num: '01012341234',
- address: '滋賀県大津市御陵町３−１',
- allergy: 'メロン',
- note: '誕生日は2,000年1月1日',
- age: '21'
-)
-
-Course.create!(
- name: 'Aコース'
-)
-
-Course.create!(
- name: 'Bコース'
-)
-
-Usage.create!(
- name: '女子会'
-)
-
-Usage.create!(
- name: '誕生会'
-)
-
-Usage.create!(
- name: '家族会'
-)
