@@ -10,7 +10,8 @@
         <th>電話番号</th>
         <th>来店予定</th>
         <th>人数</th>
-        <th>アレルギー</th>
+        <th>顧客アレルギー</th>
+        <th>他アレルギー/NG</th>
         <th>備考</th>
         <th></th>
       </tr>
@@ -24,6 +25,7 @@
         <td><%= @book.start_at %></td>
         <td><%= @book.people %></td>
         <td><%= @book.customer.allergy %></td>
+        <td><%= @book.other_allergy %></td>
         <td><%= @book.note %></td>
         <td><%= link_to '編集', edit_book_path(@book), class: "b_#{@book.id} btn btn-outline-secondary btn-block" %></td>
       </tr>

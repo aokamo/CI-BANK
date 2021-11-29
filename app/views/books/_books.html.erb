@@ -3,13 +3,11 @@
     <thead>
       <tr>
         <th>TN</th>
-        <th></th>
-        <th></th>
         <th>名前</th>
         <th>来店予定</th>
         <th>人数</th>
         <th>顧客アレルギー</th>
-        <th>他アレルギー</th>
+        <th>他アレルギー/NG</th>
         <th>予約備考</th>
         <th></th>
         <th></th>
@@ -25,8 +23,6 @@
               <%= f.submit "TN更新", class: "btn btn-primary" %>
             <% end %>
           </td>
-          <td></td>
-          <td><%= b.table_num %></td>
           <td><%= link_to b.customer.name, customer_path(b.customer), class: "b_customer_#{b.customer}" %> 様</td>
           <td>
             <% if b.start_at.present? %>
@@ -45,8 +41,6 @@
     </tbody>
     <tfoot>
       <tr>
-        <th></th>
-        <th></th>
         <th></th>
         <th></th>
         <th></th>
