@@ -1,8 +1,13 @@
 
 <h1><a href="/"><%= image_tag "CI-BANK_text_logo.png", class: "logo", alt: "CI-BANKホーム" %></a></h1>
 <% if admin_signed_in? %>
+  <div class="menu">
+   <div class="bar bar1"></div>
+   <div class="bar bar2"></div>
+   <div class="bar bar3"></div>
+  </div>
   <nav>
-    <ul class="main-nav">
+    <ul class="nav-links">
       <li>
         <strong><%= link_to "予約一覧", books_path, data: {"turbolinks"=>false}, class: "link btn-flat-vertical-border" %></strong>
       </li>
@@ -19,7 +24,7 @@
   </nav>
 <% else %>
   <nav>
-    <ul class="main-nav">
+    <ul class="nav-links">
       <li>
         <%= link_to "ログイン", new_admin_session_path, class: "link btn-flat-vertical-border" %>
       </li>

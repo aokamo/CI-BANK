@@ -23,6 +23,8 @@
   box-sizing: border-box;
 }
 
+
+// top,aboutページ
 h2{
   font-family: 'Sawarabi Gothic', sans-serif;
 }
@@ -45,7 +47,9 @@ section {
   padding-top: 10vh;
 }
 
-.main-nav{
+// ナビゲーションバー
+
+.nav-links{
   display: flex;
   margin-top: 34px;
   list-style: none;
@@ -53,18 +57,37 @@ section {
   margin-bottom: auto;
 }
 
-.main-nav li{
+.nav-links li{
   margin-left: 36px;
 }
 
+.btn-flat-vertical-border {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-left: solid 4px #12a4c4;
+  border-right: solid 4px #12a4c4;
+  color: #12a4c4;
+  background: #e1f3ff;
+  transition: .4s;
+}
 
-.bar{
+.btn-flat-vertical-border:hover {
+  border-left: solid 4px #e3d329;
+  border-right: solid 4px #e3d329;
+  background: #12a4c4;
+  color: #FFF;
+}
+
+.area-order{
   display :flex;
   padding-top: 50px;
 
 }
 
-.bar li{
+.area-order li{
   list-style: none;
   margin-right: 36px;
   margin-left: 20px;
@@ -153,26 +176,6 @@ section {
   margin: 0 auto;
 }
 
-.btn-flat-vertical-border {
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  border-left: solid 4px #12a4c4;
-  border-right: solid 4px #12a4c4;
-  color: #12a4c4;
-  background: #e1f3ff;
-  transition: .4s;
-}
-
-.btn-flat-vertical-border:hover {
-  border-left: solid 4px #e3d329;
-  border-right: solid 4px #e3d329;
-  background: #12a4c4;
-  color: #FFF;
-}
-
 .btn-partial-line {
   position: relative;
   display: inline-block;
@@ -199,4 +202,16 @@ section {
 @keyframes fadein {
   0% {opacity: 0}
   100% {opacity: 1}
+}
+
+/*
+MOBILE SIZE
+
+=======================================================================*/
+@media (max-width: 768px){
+
+}
+
+@media (max-width: 768px){
+
 }
