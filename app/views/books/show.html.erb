@@ -22,7 +22,7 @@
         <td></td>
         <td><%= @book.customer.name %></td>
         <td><%= @book.customer.phone_num %></td>
-        <td><%= @book.start_at %></td>
+        <td><%= @book.start_at.strftime("%Y年 %m月 %d日 %X") %></td>
         <td><%= @book.people %></td>
         <td><%= @book.customer.allergy %></td>
         <td><%= @book.other_allergy %></td>
