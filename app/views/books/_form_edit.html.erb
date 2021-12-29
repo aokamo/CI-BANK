@@ -3,9 +3,11 @@
 <%= f.label :name %><br>
 <%= book.customer.name %><br>
 <%= f.label :date, class: 'control-label' %>
-<%= f.date_field :date, class: 'form-control' %>
+<%= f.date_field :date, value: f.object.start_at.strftime("%Y-%m-%d"), class: 'form-control' %>
+<%#= f.date_field :date, class: 'form-control' %>
 <%= f.label :time, class: 'control-label' %>
-<%= f.time_field :time, class: 'form-control' %>
+<%= f.time_field :time, value: f.object.start_at.strftime("%X"), class: 'form-control' %>
+<%#= f.time_field :time, class: 'form-control' %>
 <%= f.label :people %><br>
 <%= f.number_field :people %><br>
 
